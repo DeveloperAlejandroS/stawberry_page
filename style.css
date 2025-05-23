@@ -1,0 +1,259 @@
+/* ===== VARIABLES ===== */
+:root {
+    --rosa-claro: #fbd6dc;
+    --rosa-intermedio: #f9c3cc;
+    --rosa-oscuro: #c76b80;
+    --naranja: #d88a3c;
+    --negro: #333;
+    --blanco: #fff;
+    --fuente-principal: 'Playfair Display', serif;
+}
+
+/* ===== RESET GENERAL ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fuente-principal);
+    background-color: var(--rosa-claro);
+    color: var(--negro);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ===== NAVBAR ===== */
+header {
+    background-color: var(--rosa-claro);
+    padding: 10px 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    width: 60px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--negro);
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: 0.2s;
+}
+
+nav ul li a:hover {
+    background-color: var(--rosa-intermedio);
+}
+
+nav ul li a.activo {
+    background-color: var(--naranja);
+    color: white;
+}
+
+/* ===== BANNER ===== */
+.banner {
+    background-image: url('fresas-banner.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.banner h1 {
+    font-size: 2rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+/* ===== RESERVA ===== */
+.reserve {
+    padding: 30px;
+    text-align: center;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.tabs div {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: 1px solid var(--negro);
+    background-color: var(--rosa-intermedio);
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.tabs .delivery {
+    background-color: #ff5e5e;
+    color: white;
+    border-radius: 8px 0 0 0;
+}
+
+.tabs .takein {
+    border-radius: 0 8px 0 0;
+}
+
+.content {
+    background-color: white;
+    padding: 20px;
+    max-width: 350px;
+    margin: 0 auto;
+    border: 2px solid black;
+    border-radius: 0 0 8px 8px;
+    display: none;
+}
+
+.content.active {
+    display: block;
+}
+
+.btn {
+    background-color: var(--naranja);
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    font-weight: bold;
+    margin: 15px 0;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.subtext {
+    font-size: 0.9em;
+    color: gray;
+}
+
+/* ===== OFERTAS ===== */
+.offers {
+    text-align: center;
+    margin: 30px 0;
+    font-size: 1.2rem;
+    padding: 20px;
+    background-color: var(--rosa-intermedio);
+    font-weight: bold;
+}
+
+/* ===== CATALOGO ===== */
+.catalogo {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px;
+    gap: 30px;
+    justify-content: center;
+}
+
+.productos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.product {
+    text-align: center;
+}
+
+.promocion {
+    max-width: 400px;
+    background-color: #fff4eb;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.promocion h3 {
+    font-weight: 400;
+    color: var(--rosa-oscuro);
+}
+
+.marca {
+    font-size: 2rem;
+    color: var(--rosa-oscuro);
+}
+
+/* ===== CONTACTO ===== */
+.contacto {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: var(--rosa-intermedio);
+    padding: 30px;
+    align-items: center;
+}
+
+.info {
+    max-width: 400px;
+}
+
+.info .dato {
+    background-color: #f7d6ae;
+    padding: 8px 10px;
+    margin: 5px 0;
+    border-radius: 4px;
+}
+
+.redes .icono {
+    width: 30px;
+    margin-left: 10px;
+}
+
+.imagen img {
+    border-radius: 10px;
+    max-height: 200px;
+    object-fit: cover;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background-color: var(--rosa-oscuro);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-links a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.tabs .delivery,
+.tabs .takein {
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #f9d5d3;
+    border: 1px solid #000;
+}
+
+.tabs .active-tab {
+    background-color: #f04d4d;
+    color: #fff;
+}

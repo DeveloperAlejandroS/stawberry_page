@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dulce tentación</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">
+                <img src="" alt="logo">
+            </a>
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/about">Ofertas</a></li>
+                <li><a href="/products">Domicilio</a></li>
+                <li><a href="/contact">Contacto</a></li>
+                <li><a href="/cart">Reserva</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="banner">
+            <h1>Fresas con crema ¡Una cucharada y no podras parar!</h1>
+        </section>
+        <section class="reserve">
+            <h1>RESERVA YA</h1>
+            <div class="tabs">
+                <div class="delivery" onclick="showtab('delivery')">A Domicilio</div>
+                <div class="takein" onclick="showtab('takein')">Para Recoger</div>
+            </div>
+            <div class="content" id="delivery">
+                <p>CLL16 Fbis A #20-20</p>
+                <p>Barrio los pinos</p>
+                <button class="btn">¡Quiero hacer mi pedido!</button>
+                <p class="subtext">Iniciar sesión para pedir mucho más rápido</p>
+            </div>
+            <div class="content" id="takein">
+                <select>
+                    <option>Sucursal Centro</option>
+                    <option>Sucursal Norte</opwtion>
+                </select>
+                <button class="btn">¡Voy a recoger!</button>
+                <p class="subtext">Iniciar sesión para guardar tu punto favorito</p>
+            </div>
+        </section>
+        <section class="offers">
+            <h1>Ofertas diarias</h1>
+            <p>Descubrelas</p>
+        </section>
+        <section class="catalogo">
+            <!--Seccion izquerda fotos-->
+            <div class="productos">
+                <div class="product-left">
+                    <div class="product">
+                        <img src="" alt="original">
+                        <p>Originales</p>
+                    </div>
+                    <div class="product">
+                        <img src="" alt="Vegan">
+                        <p>Veganas</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="promocion">
+                <h3>¡Descubre el sabor que te<br>hará caer en la tentación.</h3>
+                <h1 class="marca">Dulce<br>Tentación</h1>
+                <img src="fresas.png" alt="Fresas decorativas" width="80">
+
+                <p>
+                    En <strong>Dulce Tentación</strong> te consentimos con las mejores fresas frescas cubiertas con una
+                    suave y deliciosa crema artesanal.<br><br>
+                    Perfectas para cualquier momento: después del almuerzo, como merienda o simplemente para darte un
+                    gusto.<br><br>
+                    <strong>Fresas con crema como nunca antes las habías probado.</strong> ¡Una cucharada y no podrás
+                    parar!<br><br>
+                    Síguenos en redes sociales y haz tu pedido hoy.<br>
+                    <em>Dulce Tentación — fresas con amor.</em>
+                </p>
+            </div>
+        </section>
+        <section class="contacto">
+            <div class="info">
+                <h3>¿HABLAMOS?</h3>
+                <p>¿Necesitas algo? ¡Ponte en contacto con nosotros!</p>
+
+                <div class="dato">DulceTentacion</div>
+                <div class="dato">dulcetentacion18@gmail.com</div>
+                <div class="dato">3027972591</div>
+
+                <p class="redes">
+                    <span>¡Síguenos!</span>
+                    <a href="https://www.instagram.com/" target="_blank">
+                        <img src="instagram.svg" alt="Instagram" class="icono">
+                    </a>
+                    <a href="https://www.facebook.com/" target="_blank">
+                        <img src="facebook.svg" alt="Facebook" class="icono">
+                    </a>
+                </p>
+            </div>
+
+            <div class="imagen">
+                <img src="fresas-contacto.jpg" alt="Fresas con crema">
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="footer-contenido">
+                <p>&copy; 2025 Dulce Tentación. Todos los derechos reservados.</p>
+                <div class="footer-links">
+                    <a href="#">Términos</a>
+                    <a href="#">Privacidad</a>
+                    <a href="#">Contacto</a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        // Se ejecuta cuando se carga la página
+        document.addEventListener("DOMContentLoaded", function () {
+            // Mostramos solo el contenido de "A Domicilio" al inicio
+            showtab("delivery");
+        });
+
+        function showtab(tabId) {
+            // Oculta ambos bloques de contenido
+            document.getElementById("delivery").style.display = "none";
+            document.getElementById("takein").style.display = "none";
+
+            // Elimina clase activa de ambas pestañas
+            document.querySelector(".delivery").classList.remove("active-tab");
+            document.querySelector(".takein").classList.remove("active-tab");
+
+            // Muestra el contenido correspondiente
+            document.getElementById(tabId).style.display = "block";
+
+            // Activa la pestaña seleccionada
+            if (tabId === "delivery") {
+                document.querySelector(".delivery").classList.add("active-tab");
+            } else {
+                document.querySelector(".takein").classList.add("active-tab");
+            }
+        }
+    </script>
+
+</body>
+
+</html>
