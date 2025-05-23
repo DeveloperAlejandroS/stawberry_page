@@ -3,10 +3,14 @@
     --rosa-claro: #fbd6dc;
     --rosa-intermedio: #f9c3cc;
     --rosa-oscuro: #c76b80;
-    --naranja: #d88a3c;
+    --naranja: #ff5C21;
     --negro: #333;
     --blanco: #fff;
     --fuente-principal: 'Playfair Display', serif;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 /* ===== RESET GENERAL ===== */
@@ -30,8 +34,23 @@ img {
 
 /* ===== NAVBAR ===== */
 header {
-    background-color: var(--rosa-claro);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background-color: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+
     padding: 10px 30px;
+    box-shadow: none;
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+header.scrolled {
+    background-color: rgba(255, 182, 193, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -61,7 +80,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: var(--rosa-intermedio);
+    background-color: var(--naranja);
 }
 
 nav ul li a.activo {
@@ -71,21 +90,40 @@ nav ul li a.activo {
 
 /* ===== BANNER ===== */
 .banner {
-    background-image: url('fresas-banner.jpg');
-    background-size: cover;
-    background-position: center;
+    position: relative;
     height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     padding: 20px;
+    overflow: hidden;
+}
+
+.banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/src/img/banner.jpeg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(4px);
+    /* ajusta el valor según necesites */
+    z-index: 0;
+}
+
+.banner>* {
+    position: relative;
+    z-index: 1;
 }
 
 .banner h1 {
     font-size: 2rem;
     color: white;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(80, 1, 1, 0.2);
     padding: 10px 20px;
     border-radius: 10px;
 }
@@ -112,13 +150,39 @@ nav ul li a.activo {
 }
 
 .tabs .delivery {
-    background-color: #ff5e5e;
+    background-color: #ff5C21;
     color: white;
-    border-radius: 8px 0 0 0;
+    border-radius: 3px 0 0 0 0;
 }
 
 .tabs .takein {
-    border-radius: 0 8px 0 0;
+    border-radius: 3px 0 0 0 0;
+}
+
+.custom-select {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: white;
+    color: #333;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%23333' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.custom-select:focus {
+    outline: none;
+    border-color: #666;
 }
 
 .content {
@@ -127,7 +191,7 @@ nav ul li a.activo {
     max-width: 350px;
     margin: 0 auto;
     border: 2px solid black;
-    border-radius: 0 0 8px 8px;
+    border-radius: 0 0 0 0;
     display: none;
 }
 
@@ -161,6 +225,19 @@ nav ul li a.activo {
     font-weight: bold;
 }
 
+.offers-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.offers-container img {
+    max-width: 300px;
+    transform: rotate(45deg);
+}
+
 /* ===== CATALOGO ===== */
 .catalogo {
     display: flex;
@@ -178,14 +255,37 @@ nav ul li a.activo {
 
 .product {
     text-align: center;
+    margin: 5px;
+}
+
+#og_img {
+    width: 300px;
+    height: 262px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.product img {
+    border-radius: 10px;
+    width: 900%;
+    object-fit: cover;
 }
 
 .promocion {
     max-width: 400px;
+    max-height: 581px;
     background-color: #fff4eb;
-    padding: 25px;
+    ;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.promocion img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
 }
 
 .promocion h3 {
@@ -202,7 +302,7 @@ nav ul li a.activo {
 .contacto {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
     background-color: var(--rosa-intermedio);
     padding: 30px;
     align-items: center;
@@ -219,8 +319,15 @@ nav ul li a.activo {
     border-radius: 4px;
 }
 
-.redes .icono {
-    width: 30px;
+.redes-img {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.redes-img .icono {
+    width: 50px;
     margin-left: 10px;
 }
 

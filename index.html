@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
         rel="stylesheet">
+    <link rel="icon" href="/src/img/logo_w_bg.jpg" type="image/jpg">
 
 </head>
 
@@ -18,20 +19,20 @@
     <header>
         <nav>
             <a href="/" class="logo">
-                <img src="" alt="logo">
+                <img src="./src/img/logo.png" alt="logo">
             </a>
             <ul>
-                <li><a href="/">Inicio</a></li>
-                <li><a href="/about">Ofertas</a></li>
-                <li><a href="/products">Domicilio</a></li>
-                <li><a href="/contact">Contacto</a></li>
-                <li><a href="/cart">Reserva</a></li>
+                <li><a href="#banner">Inicio</a></li>
+                <li><a href="#offers">Ofertas</a></li>
+                <li><a href="#reserve">Domicilio</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#banner">Reserva</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="banner">
+        <section class="banner" id="banner">
             <h1>Fresas con crema ¡Una cucharada y no podras parar!</h1>
         </section>
         <section class="reserve">
@@ -47,54 +48,46 @@
                 <p class="subtext">Iniciar sesión para pedir mucho más rápido</p>
             </div>
             <div class="content" id="takein">
-                <select>
+                <select class="custom-select">
                     <option>Sucursal Centro</option>
-                    <option>Sucursal Norte</opwtion>
+                    <option>Sucursal Norte</option> <!-- corregido 'opwtion' -->
                 </select>
                 <button class="btn">¡Voy a recoger!</button>
                 <p class="subtext">Iniciar sesión para guardar tu punto favorito</p>
             </div>
         </section>
-        <section class="offers">
-            <h1>Ofertas diarias</h1>
-            <p>Descubrelas</p>
+        <section class="offers" id="offers">
+            <div class="offers-container">
+
+                <h1>Ofertas diarias</h1>
+                <p><b>Descubrelas</b></p>
+                <p><i>Ups paredce que no hay nada por ahora</i></p>
+                <img src="./src/img/fresa_png-removebg-preview.png" alt="">
+            </div>
         </section>
-        <section class="catalogo">
+        <section class="catalogo" id="catalogo">
             <!--Seccion izquerda fotos-->
             <div class="productos">
                 <div class="product-left">
                     <div class="product">
-                        <img src="" alt="original">
-                        <p>Originales</p>
+                        <p><b>Originales</b></p>
+                        <img id="og_img" src="./src/img/og_fresa.png" alt="original">
                     </div>
                     <div class="product">
-                        <img src="" alt="Vegan">
-                        <p>Veganas</p>
+                        <p><b>Veganas</b></p>
+                        <img src="./src/img/vegan.png" alt="Vegan">
                     </div>
                 </div>
             </div>
 
-            <div class="promocion">
-                <h3>¡Descubre el sabor que te<br>hará caer en la tentación.</h3>
-                <h1 class="marca">Dulce<br>Tentación</h1>
-                <img src="fresas.png" alt="Fresas decorativas" width="80">
-
-                <p>
-                    En <strong>Dulce Tentación</strong> te consentimos con las mejores fresas frescas cubiertas con una
-                    suave y deliciosa crema artesanal.<br><br>
-                    Perfectas para cualquier momento: después del almuerzo, como merienda o simplemente para darte un
-                    gusto.<br><br>
-                    <strong>Fresas con crema como nunca antes las habías probado.</strong> ¡Una cucharada y no podrás
-                    parar!<br><br>
-                    Síguenos en redes sociales y haz tu pedido hoy.<br>
-                    <em>Dulce Tentación — fresas con amor.</em>
-                </p>
+            <div class="promocion" id="promocion">
+                <img src="./src/img/hero.jpg" alt="Fresas decorativas" width="80">
             </div>
         </section>
-        <section class="contacto">
+        <section class="contacto" id="contacto">
+            <h3>¿HABLAMOS?</h3>
+            <p>¿Necesitas algo? ¡Ponte en contacto con nosotros!</p>
             <div class="info">
-                <h3>¿HABLAMOS?</h3>
-                <p>¿Necesitas algo? ¡Ponte en contacto con nosotros!</p>
 
                 <div class="dato">DulceTentacion</div>
                 <div class="dato">dulcetentacion18@gmail.com</div>
@@ -102,20 +95,23 @@
 
                 <p class="redes">
                     <span>¡Síguenos!</span>
+                </p>
+                <div class="redes-img">
+
                     <a href="https://www.instagram.com/" target="_blank">
-                        <img src="instagram.svg" alt="Instagram" class="icono">
+                        <img src="./src/img/ig.png" alt="Instagram" class="icono">
                     </a>
                     <a href="https://www.facebook.com/" target="_blank">
-                        <img src="facebook.svg" alt="Facebook" class="icono">
+                        <img src="./src/img/fb.png" alt="Facebook" class="icono">
                     </a>
-                </p>
+                </div>
             </div>
 
             <div class="imagen">
-                <img src="fresas-contacto.jpg" alt="Fresas con crema">
+                <img src="./src/img/redes.png" alt="Fresas con crema">
             </div>
         </section>
-        <footer class="footer">
+        <footer class="footer" >
             <div class="footer-contenido">
                 <p>&copy; 2025 Dulce Tentación. Todos los derechos reservados.</p>
                 <div class="footer-links">
@@ -153,6 +149,15 @@
                 document.querySelector(".takein").classList.add("active-tab");
             }
         }
+
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {  // cuando scrollees más de 50px
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
     </script>
 
 </body>
