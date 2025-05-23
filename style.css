@@ -88,6 +88,10 @@ nav ul li a.activo {
     color: white;
 }
 
+.menu-toggle {
+    display: none;
+}
+
 /* ===== BANNER ===== */
 .banner {
     position: relative;
@@ -107,10 +111,10 @@ nav ul li a.activo {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('/src/img/banner.jpeg');
+    background-image: url('src/img/banner.jpeg');
     background-size: cover;
     background-position: center;
-    filter: blur(4px);
+    filter: blur(6px);
     /* ajusta el valor según necesites */
     z-index: 0;
 }
@@ -137,7 +141,7 @@ nav ul li a.activo {
 .tabs {
     display: flex;
     justify-content: center;
-    margin: 20px 0;
+    margin: 0;
 }
 
 .tabs div {
@@ -363,4 +367,90 @@ nav ul li a.activo {
 .tabs .active-tab {
     background-color: #f04d4d;
     color: #fff;
+}
+
+/* ===== MEDIA QUERIES ===== */
+@media (max-width: 600px) {
+
+    nav {
+        position: relative;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-top: 50px;
+    }
+
+    .logo {
+        position: absolute;
+        left: 50%;
+        top: 10px;
+        transform: translateX(-50%) translateY(-25%);
+    }
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 15px;
+        top: 10px;
+        font-size: 28px;
+        background: none;
+        border: none;
+        color: var(--negro);
+        cursor: pointer;
+        z-index: 1100;
+    }
+
+    nav ul {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.3s ease, opacity 0.3s ease;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100vw;
+        /* Para que ocupe todo el ancho */
+        flex-direction: column;
+        align-items: center;
+        background-color: var(--rosa-claro);
+        z-index: 1000;
+    }
+
+    nav ul.show {
+        max-height: 500px;
+        /* Ajusta según la altura de tu menú */
+        opacity: 1;
+    }
+
+    nav ul li {
+        text-align: center;
+        padding: 10px;
+        width: 100%;
+        /* Para que cada item ocupe todo el ancho */
+    }
+}
+
+
+.contacto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centra horizontalmente */
+    text-align: center;
+    /* Opcional: centra texto si lo deseas */
+}
+
+.contacto .info {
+    width: 100%;
+    max-width: 400px;
+    /* ajusta según tus necesidades */
+}
+
+.redes-img {
+    display: flex;
+    justify-content: center;
+    /* Opcional: centra texto si lo deseas */
+}
+
+.imagen {
+    display: none;
 }
