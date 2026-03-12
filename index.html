@@ -1,134 +1,272 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dulce tentación</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dulce Tentación — Fresas frescas con crema artesanal. Pide a domicilio o recoge en nuestras sucursales. ¡Una cucharada y no podrás parar!">
+  <meta property="og:title" content="Dulce Tentación — Fresas con Crema Artesanal">
+  <meta property="og:description" content="Las mejores fresas frescas con crema artesanal. Originales y veganas.">
+  <meta property="og:image" content="./src/img/logo_w_bg.jpg">
+  <title>Dulce Tentación 🍓</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-        rel="stylesheet">
-    <link rel="icon" href="src/img/logo_w_bg.jpg" type="image/jpg">
-    <script src="script.js"></script>
+  <link rel="icon" href="./src/img/logo_w_bg.jpg" type="image/jpg">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header>
-        <nav>
-            <a href="#banner" class="logo">
-                <img src="./src/img/logo.png" alt="logo">
-            </a>
 
-            <button class="menu-toggle" aria-label="Abrir menú">
-                ☰
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <nav class="nav">
+      <a href="#inicio" class="nav-logo">
+        <img src="./src/img/logo.png" alt="Dulce Tentación">
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#inicio"   class="nav-link">Inicio</a></li>
+        <li><a href="#menu"     class="nav-link">Menú</a></li>
+        <li><a href="#pedido"   class="nav-link">Pedir</a></li>
+        <li><a href="#contacto" class="nav-link">Contacto</a></li>
+      </ul>
+
+      <a href="#pedido" class="btn-nav">Hacer pedido</a>
+
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="hero-bg">
+        <img src="./src/img/hero.jpg" alt="Fresas con crema" class="hero-img">
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="hero-content">
+        <p class="hero-kicker">Hecho con amor · Bogotá, Colombia</p>
+        <h1 class="hero-title">
+          El sabor que te hará<br>
+          <em>caer en la tentación</em>
+        </h1>
+        <p class="hero-sub">Fresas frescas con crema artesanal. Una cucharada y no podrás parar.</p>
+        <div class="hero-actions">
+          <a href="#pedido" class="btn-primary">Quiero pedir 🍓</a>
+          <a href="#menu"   class="btn-outline">Ver menú</a>
+        </div>
+      </div>
+      <div class="hero-scroll" aria-hidden="true">
+        <span class="scroll-line"></span>
+      </div>
+    </section>
+
+    <!-- PROPUESTA DE VALOR -->
+    <section class="valores" id="valores">
+      <div class="container">
+        <p class="section-tag">¿Por qué Dulce Tentación?</p>
+        <h2 class="section-title">Fresas con crema<br>como nunca las habías probado</h2>
+        <div class="valores-grid">
+          <div class="valor-card">
+            <span class="valor-icon">🍓</span>
+            <h3>Frescura garantizada</h3>
+            <p>Seleccionamos las mejores fresas del día, frescas y en su punto exacto de madurez.</p>
+          </div>
+          <div class="valor-card">
+            <span class="valor-icon">🥛</span>
+            <h3>Crema artesanal</h3>
+            <p>Nuestra crema se prepara de forma artesanal, suave, deliciosa y sin conservantes.</p>
+          </div>
+          <div class="valor-card">
+            <span class="valor-icon">🌿</span>
+            <h3>Opción vegana</h3>
+            <p>Tenemos una versión 100% vegetal para que todos puedan disfrutar de la tentación.</p>
+          </div>
+          <div class="valor-card">
+            <span class="valor-icon">🛵</span>
+            <h3>A tu puerta</h3>
+            <p>Domicilios rápidos o recoge en tu sucursal favorita. Siempre a tiempo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MENÚ -->
+    <section class="menu" id="menu">
+      <div class="container">
+        <p class="section-tag">Lo que ofrecemos</p>
+        <h2 class="section-title">Nuestro menú</h2>
+
+        <div class="menu-grid">
+
+          <div class="menu-card featured">
+            <div class="menu-card-img">
+              <img src="./src/img/og_fresa.png" alt="Fresas con crema originales">
+              <span class="menu-badge">Clásico</span>
+            </div>
+            <div class="menu-card-body">
+              <h3>Originales</h3>
+              <p>Fresas frescas bañadas en nuestra crema artesanal suave. El original que nos puso en el mapa.</p>
+              <div class="menu-card-footer">
+                <a href="#pedido" class="btn-primary btn-sm">Pedir ahora</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-card">
+            <div class="menu-card-img">
+              <img src="./src/img/vegan.png" alt="Fresas con crema vegana">
+              <span class="menu-badge vegan">🌿 Vegana</span>
+            </div>
+            <div class="menu-card-body">
+              <h3>Veganas</h3>
+              <p>Toda la cremosidad y el sabor de las originales, en versión 100% vegetal. ¡Sin sacrificar nada!</p>
+              <div class="menu-card-footer">
+                <a href="#pedido" class="btn-primary btn-sm">Pedir ahora</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- OFERTA DEL DÍA -->
+    <section class="oferta" id="oferta">
+      <div class="oferta-inner">
+        <div class="oferta-text">
+          <p class="section-tag light">Hoy en especial</p>
+          <h2>Ofertas del día</h2>
+          <p class="oferta-sub">Estamos preparando algo delicioso para ti. <br>¡Síguenos en redes para no perderte las sorpresas!</p>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="btn-outline-light">
+            Ver en Instagram →
+          </a>
+        </div>
+        <div class="oferta-img">
+          <img src="./src/img/fresa_png-removebg-preview.png" alt="Fresa fresca">
+        </div>
+      </div>
+    </section>
+
+    <!-- PEDIDO -->
+    <section class="pedido" id="pedido">
+      <div class="container">
+        <p class="section-tag">Rápido y fácil</p>
+        <h2 class="section-title">Haz tu pedido</h2>
+
+        <div class="pedido-card">
+          <div class="tabs-nav" role="tablist">
+            <button class="tab-btn active" role="tab" aria-selected="true"  data-tab="domicilio">
+              🛵 A domicilio
             </button>
+            <button class="tab-btn"        role="tab" aria-selected="false" data-tab="recoger">
+              🏪 Para recoger
+            </button>
+          </div>
 
-            <ul>
-                <li><a href="#banner">Inicio</a></li>
-                <li><a href="#offers">Ofertas</a></li>
-                <li><a href="#reserve">Domicilio</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-                <li><a href="#banner">Reserva</a></li>
-            </ul>
-        </nav>
-    </header>
+          <div class="tab-panel active" id="tab-domicilio">
+            <div class="pedido-info">
+              <div class="pedido-detail">
+                <span class="detail-label">Zona de cobertura</span>
+                <span class="detail-value">CLL 16 Fbis A #20-20 · Barrio Los Pinos y alrededores</span>
+              </div>
+              <div class="pedido-detail">
+                <span class="detail-label">Tiempo estimado</span>
+                <span class="detail-value">25 – 40 minutos</span>
+              </div>
+            </div>
+            <a href="https://wa.me/573027972591?text=Hola%20Dulce%20Tentaci%C3%B3n%2C%20quiero%20hacer%20un%20pedido%20a%20domicilio%20%F0%9F%8D%93"
+               target="_blank" rel="noopener noreferrer" class="btn-primary btn-full">
+              Pedir por WhatsApp 🍓
+            </a>
+            <p class="pedido-sub">Te atendemos en minutos por WhatsApp</p>
+          </div>
 
-    <main>
-        <section class="banner" id="banner">
-            <h1>Fresas con crema<br>¡Una cucharada y no podras parar!</h1>
-        </section>
-        <section class="reserve">
-            <h1>RESERVA YA</h1>
-            <div class="tabs">
-                <div class="delivery" onclick="showtab('delivery')">A Domicilio</div>
-                <div class="takein" onclick="showtab('takein')">Para Recoger</div>
+          <div class="tab-panel" id="tab-recoger">
+            <div class="pedido-info">
+              <label class="detail-label" for="sucursal">Elige tu sucursal</label>
+              <select class="custom-select" id="sucursal">
+                <option value="centro">📍 Sucursal Centro — CLL 16 Fbis A #20-20</option>
+                <option value="norte">📍 Sucursal Norte — Próximamente</option>
+              </select>
             </div>
-            <div class="content" id="delivery">
-                <p>CLL16 Fbis A #20-20</p>
-                <p>Barrio los pinos</p>
-                <button class="btn">¡Quiero hacer mi pedido!</button>
-                <p class="subtext">Iniciar sesión para pedir mucho más rápido</p>
-            </div>
-            <div class="content" id="takein">
-                <select class="custom-select">
-                    <option>Sucursal Centro</option>
-                    <option>Sucursal Norte</option> <!-- corregido 'opwtion' -->
-                </select>
-                <button class="btn">¡Voy a recoger!</button>
-                <p class="subtext">Iniciar sesión para guardar tu punto favorito</p>
-            </div>
-        </section>
-        <section class="offers" id="offers">
-            <div class="offers-container">
+            <a href="https://wa.me/573027972591?text=Hola%20Dulce%20Tentaci%C3%B3n%2C%20quiero%20hacer%20un%20pedido%20para%20recoger%20%F0%9F%8D%93"
+               target="_blank" rel="noopener noreferrer" class="btn-primary btn-full">
+              Reservar por WhatsApp 🍓
+            </a>
+            <p class="pedido-sub">Tu pedido estará listo cuando llegues</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-                <h1>Ofertas diarias</h1>
-                <p><b>Descubrelas</b></p>
-                <p><i>Ups parece que no hay nada por ahora</i></p>
-                <img src="./src/img/fresa_png-removebg-preview.png" alt="">
-            </div>
-        </section>
-        <section class="catalogo" id="catalogo">
-            <!--Seccion izquerda fotos-->
-            <div class="productos">
-                <div class="product-left">
-                    <div class="product">
-                        <p><b>Originales</b></p>
-                        <img id="og_img" src="./src/img/og_fresa.png" alt="original">
-                        <br>
-                    </div>
-                    <div class="product">
-                        <p><b>Veganas</b></p>
-                        <img src="./src/img/vegan.png" alt="Vegan">
-                    </div>
-                </div>
-            </div>
+    <!-- CONTACTO -->
+    <section class="contacto" id="contacto">
+      <div class="container contacto-grid">
 
-            <div class="promocion" id="promocion">
-                <img src="./src/img/hero.jpg" alt="Fresas decorativas" width="80">
-            </div>
-        </section>
-        <section class="contacto" id="contacto">
-            <div class="info">
-                <h3>¿HABLAMOS?</h3>
-                <p>¿Necesitas algo? ¡Ponte en contacto con nosotros!</p>
+        <div class="contacto-info">
+          <p class="section-tag">Estamos aquí</p>
+          <h2 class="section-title left">¿Hablamos?</h2>
+          <p class="contacto-sub">¿Tienes una pregunta, un evento especial o solo quieres decirnos que te encantamos? ¡Escríbenos!</p>
 
-                <div class="dato">DulceTentacion</div>
-                <div class="dato">dulcetentacion18@gmail.com</div>
-                <div class="dato">3027972591</div>
-
-                <p class="redes">
-                    <span>¡Síguenos!</span>
-                </p>
-                <div class="redes-img">
-
-                    <a href="https://www.instagram.com/" target="_blank">
-                        <img src="./src/img/ig.png" alt="Instagram" class="icono">
-                    </a>
-                    <a href="https://www.facebook.com/" target="_blank">
-                        <img src="./src/img/fb.png" alt="Facebook" class="icono">
-                    </a>
-                </div>
+          <div class="contacto-datos">
+            <div class="dato">
+              <span class="dato-icon">📧</span>
+              <a href="mailto:dulcetentacion18@gmail.com">dulcetentacion18@gmail.com</a>
             </div>
+            <div class="dato">
+              <span class="dato-icon">📱</span>
+              <a href="tel:+573027972591">302 797 2591</a>
+            </div>
+            <div class="dato">
+              <span class="dato-icon">📍</span>
+              <span>CLL 16 Fbis A #20-20, Barrio Los Pinos, Bogotá</span>
+            </div>
+          </div>
 
-            <div class="imagen">
-                <img src="./src/img/redes.png" alt="Fresas con crema">
+          <div class="redes">
+            <p class="redes-label">¡Síguenos!</p>
+            <div class="redes-links">
+              <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="red-link ig" aria-label="Instagram">
+                <img src="./src/img/ig.png" alt="Instagram">
+              </a>
             </div>
-        </section>
-        <footer class="footer">
-            <div class="footer-contenido">
-                <p>&copy; 2025 Dulce Tentación. Todos los derechos reservados.</p>
-                <div class="footer-links">
-                    <a href="#">Términos</a>
-                    <a href="#">Privacidad</a>
-                    <a href="#">Contacto</a>
-                </div>
-            </div>
-        </footer>
-    </main>
+          </div>
+        </div>
+
+        <div class="contacto-img">
+          <img src="./src/img/redes.png" alt="Fresas con crema Dulce Tentación">
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-logo">
+        <img src="./src/img/logo.png" alt="Dulce Tentación">
+        <p>Fresas con crema con amor.</p>
+      </div>
+      <div class="footer-nav">
+        <a href="#inicio">Inicio</a>
+        <a href="#menu">Menú</a>
+        <a href="#pedido">Pedir</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <p class="footer-copy">&copy; <span id="year"></span> Dulce Tentación · Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
 </body>
-
 </html>
